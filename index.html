@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>邓州市百年汽车服务有限公司 - 专业租车</title>
+<style>
+:root {
+  --pri: #1a56db;
+  --pri-d: #1e40af;
+  --pri-l: #dbeafe;
+  --acc: #f97316;
+  --acc-d: #ea580c;
+  --dark: #111827;
+  --d2: #1f2937;
+  --g50: #f9fafb;
+  --g100: #f3f4f6;
+  --g200: #e5e7eb;
+  --g300: #d1d5db;
+  --g500: #6b7280;
+  --g700: #374151;
+  --w: #fff;
+  --r: 12px;
+  --r2: 8px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;color:var(--g700);background:var(--w);line-height:1.7;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+img{max-width:100%}
+ul{list-style:none}
+button,input,select,textarea{font:inherit}
+
+/* Utility */
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+.sec{padding:80px 0}
+.sec-t{text-align:center;font-size:1.8rem;font-weight:800;color:var(--dark);margin-bottom:8px}
+.sec-sub{text-align:center;color:var(--g500);font-size:.95rem;margin-bottom:48px}
+.sec-t:after{content:'';display:block;width:48px;height:3px;background:var(--acc);margin:12px auto 0;border-radius:3px}
+.btn{display:inline-block;padding:11px 26px;border-radius:var(--r2);font-weight:600;cursor:pointer;border:none;transition:all .25s;text-align:center}
+.btn-p{background:var(--pri);color:var(--w)}
+.btn-p:hover{background:var(--pri-d);transform:translateY(-2px);box-shadow:0 4px 14px rgba(26,86,219,.3)}
+.btn-a{background:var(--acc);color:var(--w)}
+.btn-a:hover{background:var(--acc-d);transform:translateY(-2px);box-shadow:0 4px 14px rgba(249,115,22,.3)}
+.btn-o{background:transparent;border:2px solid var(--pri);color:var(--pri)}
+.btn-o:hover{background:var(--pri);color:var(--w)}
+.btn-ow{background:transparent;border:2px solid var(--w);color:var(--w)}
+.btn-ow:hover{background:var(--w);color:var(--dark)}
+
+/* Header */
+.hd{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);box-shadow:0 1px 4px rgba(0,0,0,.06)}
+.hd .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.2rem;color:var(--dark)}
+.logo i{display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:var(--pri);color:var(--w);border-radius:var(--r2);font-size:1.2rem;font-style:normal}
+.nav{display:flex;gap:28px;align-items:center}
+.nav a{font-size:.9rem;font-weight:500;color:var(--g700);transition:color .2s;padding:4px 0;border-bottom:2px solid transparent}
+.nav a:hover{color:var(--pri);border-color:var(--pri)}
+.hd-r{display:flex;align-items:center;gap:12px}
+.hd-tel{font-weight:700;color:var(--acc);font-size:1rem;white-space:nowrap}
+.hd-tel:hover{text-decoration:underline}
+.ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}
+.ham span{display:block;width:24px;height:2.5px;background:var(--dark);border-radius:3px;transition:all .3s}
+.ham.on span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.ham.on span:nth-child(2){opacity:0}
+.ham.on span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+
+/* Hero */
+.hero{background:linear-gradient(135deg,var(--dark),#0f172a 60%,#1e3a5f);color:var(--w);padding:90px 0 100px;position:relative;overflow:hidden}
+.hero:before{content:'';position:absolute;top:-40%;right:-10%;width:700px;height:700px;background:radial-gradient(circle,rgba(26,86,219,.12),transparent 70%);border-radius:50%}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;z-index:1}
+.hero-badge{display:inline-block;background:rgba(255,255,255,.12);padding:5px 16px;border-radius:20px;font-size:.8rem;margin-bottom:16px}
+.hero h1{font-size:2.8rem;font-weight:800;line-height:1.25;margin-bottom:16px}
+.hero h1 em{color:var(--acc);font-style:normal}
+.hero p{font-size:1.05rem;color:rgba(255,255,255,.75);margin-bottom:28px;line-height:1.8;max-width:480px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.hero-nums{display:flex;gap:36px;margin-top:32px}
+.hero-num h3{font-size:1.6rem;color:var(--acc)}
+.hero-num span{font-size:.8rem;color:rgba(255,255,255,.55)}
+.hero-visual{display:flex;align-items:center;justify-content:center}
+.hero-img{width:280px;height:180px;background:linear-gradient(135deg,#e74c3c,#c0392b);border-radius:50% 50% 10% 10%/45% 45% 10% 10%;position:relative;box-shadow:0 20px 50px rgba(0,0,0,.35)}
+.hero-img:before{content:'';position:absolute;top:28px;left:26px;right:26px;bottom:52px;background:rgba(255,255,255,.12);border-radius:60% 60% 0 0}
+
+/* Services */
+.svcs{background:var(--g50)}
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
+.svc-card{background:var(--w);border-radius:var(--r);padding:32px 24px;text-align:center;transition:all .3s;border:1px solid var(--g200)}
+.svc-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,.08);border-color:var(--pri-l)}
+.svc-icon{font-size:2.4rem;margin-bottom:14px}
+.svc-card h4{font-size:1.05rem;font-weight:700;margin-bottom:8px;color:var(--dark)}
+.svc-card p{font-size:.85rem;color:var(--g500);line-height:1.7}
+
+/* Cars + Pricing */
+.cars-pricing .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:24px}
+.cat-card{background:var(--w);border-radius:var(--r);overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.06);border:1px solid var(--g200);transition:all .3s}
+.cat-card:hover{transform:translateY(-4px);box-shadow:0 8px 28px rgba(0,0,0,.1)}
+.cat-head{padding:28px 24px 20px;display:flex;align-items:center;gap:16px}
+.cat-icon{font-size:2.6rem;flex-shrink:0}
+.cat-head h3{font-size:1.2rem;font-weight:700;color:var(--dark)}
+.cat-head small{display:block;color:var(--g500);font-size:.85rem;margin-top:2px}
+.cat-price{text-align:right;margin-left:auto}
+.cat-price strong{font-size:1.5rem;color:var(--acc)}
+.cat-price span{font-size:.75rem;color:var(--g500)}
+.cat-cars{padding:0 24px 24px}
+.cat-cars li{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px dashed var(--g200);font-size:.9rem}
+.cat-cars li:last-child{border:none}
+.cat-tag{font-size:.75rem;padding:2px 8px;border-radius:10px;font-weight:500}
+.tag-hot{background:#fef3c7;color:#b45309}
+.tag-new{background:#dbeafe;color:#1d4ed8}
+.tag-vip{background:#fce7f3;color:#be185d}
+.cat-foot{padding:16px 24px 20px;border-top:1px solid var(--g200);text-align:center}
+.cat-foot .note{font-size:.82rem;color:var(--g500);margin-bottom:12px}
+.cat-foot .note i{font-weight:600;color:var(--acc);font-style:normal}
+
+/* Booking */
+.bk{background:var(--g50)}
+.bk-row{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.bk-form{background:var(--w);padding:36px 32px;border-radius:var(--r);box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.f-grp{margin-bottom:14px}
+.f-grp label{display:block;font-weight:600;font-size:.85rem;margin-bottom:5px;color:var(--dark)}
+.f-grp input,.f-grp select,.f-grp textarea{width:100%;padding:10px 12px;border:1px solid var(--g300);border-radius:var(--r2);transition:all .2s;font-size:.9rem;background:var(--w)}
+.f-grp input:focus,.f-grp select:focus,.f-grp textarea:focus{outline:none;border-color:var(--pri);box-shadow:0 0 0 3px rgba(26,86,219,.08)}
+.bk-aside{display:flex;flex-direction:column;gap:20px}
+.bk-aside h3{font-size:1.2rem;font-weight:700;color:var(--dark)}
+.bk-benefit{display:flex;gap:12px}
+.bk-bicon{flex-shrink:0;width:42px;height:42px;background:var(--pri-l);border-radius:var(--r2);display:flex;align-items:center;justify-content:center;font-size:1.2rem}
+.bk-benefit h4{font-size:.95rem;font-weight:600;margin-bottom:2px}
+.bk-benefit p{font-size:.82rem;color:var(--g500)}
+.bk-hotline{background:var(--acc);color:var(--w);padding:24px;border-radius:var(--r);text-align:center}
+.bk-hotline h4{font-size:1rem;margin-bottom:6px}
+.bk-hotline .tel{font-size:1.5rem;font-weight:800}
+.bk-hotline .tel a{color:var(--w);text-decoration:none}
+.bk-hotline sub{display:block;font-size:.75rem;opacity:.8;margin-top:4px}
+
+/* Store */
+.store .wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.st-card{background:var(--w);border-radius:var(--r);padding:36px 32px;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.st-card h3{font-size:1.3rem;font-weight:700;margin-bottom:24px;padding-bottom:14px;border-bottom:2px solid var(--g200);color:var(--dark)}
+.st-item{display:flex;gap:14px;margin-bottom:18px;align-items:flex-start}
+.st-ico{flex-shrink:0;width:36px;height:36px;background:var(--pri-l);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem}
+.st-item h5{font-weight:600;margin-bottom:2px;font-size:.9rem}
+.st-item p,.st-item a{font-size:.88rem;color:var(--g500)}
+.st-item a:hover{color:var(--pri)}
+.st-map{background:linear-gradient(135deg,#dbeafe,#bfdbfe);border-radius:var(--r);display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:380px}
+.st-pin{font-size:3rem;animation:bounce 2s infinite}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.st-addr-label{background:var(--w);padding:10px 20px;border-radius:var(--r2);margin-top:14px;font-weight:600;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.06);font-size:.9rem}
+
+/* Guidelines */
+.guide{background:var(--g50)}
+.g-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px}
+.g-card{background:var(--w);border-radius:var(--r);padding:28px 24px;border-left:4px solid var(--pri);transition:all .25s}
+.g-card:hover{box-shadow:0 4px 16px rgba(0,0,0,.08)}
+.g-num{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;background:var(--pri);color:var(--w);border-radius:50%;font-weight:700;font-size:.85rem;margin-bottom:12px}
+.g-card h4{font-size:1rem;font-weight:700;margin-bottom:8px;color:var(--dark)}
+.g-card p{font-size:.85rem;color:var(--g500);line-height:1.8}
+.g-notice{background:#fff7ed;border:1px solid #fed7aa;border-radius:var(--r);padding:28px 32px;margin-top:28px;text-align:center}
+.g-notice h4{font-size:1.05rem;color:var(--acc);margin-bottom:8px}
+
+/* Footer */
+.ft{background:var(--dark);color:rgba(255,255,255,.65);padding:50px 0 24px}
+.ft-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:36px}
+.ft-brand h3{color:var(--w);font-size:1.2rem;margin-bottom:10px}
+.ft-brand p{font-size:.85rem;line-height:1.8}
+.ft-col h4{color:var(--w);font-size:.95rem;margin-bottom:14px}
+.ft-col a{display:block;padding:4px 0;font-size:.85rem;transition:color .2s}
+.ft-col a:hover{color:var(--acc)}
+.ft-bot{border-top:1px solid rgba(255,255,255,.08);padding-top:20px;text-align:center;font-size:.8rem}
+
+/* Toast */
+.toast{position:fixed;top:20px;left:50%;transform:translateX(-50%);background:#059669;color:#fff;padding:12px 28px;border-radius:var(--r2);font-weight:600;z-index:9999;opacity:0;transition:opacity .3s;pointer-events:none;font-size:.9rem}
+.toast.show{opacity:1}
+
+/* Mobile */
+@media(max-width:1024px){
+  .hero .wrap{grid-template-columns:1fr;text-align:center}
+  .hero h1{font-size:2rem}
+  .hero p{max-width:100%}
+  .hero-btns{justify-content:center}
+  .hero-nums{justify-content:center}
+  .hero-visual{display:none}
+  .bk-row{grid-template-columns:1fr}
+  .store .wrap{grid-template-columns:1fr}
+  .ft-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  .sec{padding:56px 0}
+  .sec-t{font-size:1.5rem}
+  .nav{position:fixed;top:64px;left:0;right:0;background:var(--w);flex-direction:column;padding:20px;gap:14px;box-shadow:0 8px 20px rgba(0,0,0,.1);transform:translateY(-130%);transition:transform .3s;z-index:999}
+  .nav.show{transform:translateY(0)}
+  .ham{display:flex}
+  .hero{padding:56px 0 64px}
+  .hero h1{font-size:1.6rem}
+  .hero-nums{flex-wrap:wrap;gap:20px}
+  .cars-pricing .wrap{grid-template-columns:1fr}
+  .f-row{grid-template-columns:1fr}
+  .svc-grid{grid-template-columns:1fr 1fr}
+  .g-grid{grid-template-columns:1fr}
+  .ft-grid{grid-template-columns:1fr}
+  .cat-card{margin:0}
+}
+@media(max-width:480px){
+  .svc-grid{grid-template-columns:1fr}
+  .hero h1{font-size:1.4rem}
+  .bk-form{padding:24px 18px}
+  .st-card{padding:24px 18px}
+}
+</style>
+</head>
+<body>
+
+<!-- ====== Header ====== -->
+<header class="hd" id="hd">
+  <div class="wrap">
+    <a href="#home" class="logo"><i>百</i>百年租车</a>
+    <nav class="nav" id="nav">
+      <a href="#home">首页</a>
+      <a href="#cars">车型报价</a>
+      <a href="#services">服务介绍</a>
+      <a href="#booking">在线预约</a>
+      <a href="#store">门店信息</a>
+      <a href="#guide">租车须知</a>
+    </nav>
+    <div class="hd-r">
+      <a href="tel:15993179777" class="hd-tel">📞 15993179777</a>
+      <button class="ham" id="ham" onclick="toggleMenu()" aria-label="菜单"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- ====== Hero ====== -->
+<section class="hero" id="home">
+  <div class="wrap">
+    <div>
+      <div class="hero-badge">2018年成立 · 邓州本地租车品牌</div>
+      <h1>一路畅行<br><em>百年</em>相伴</h1>
+      <p>邓州市百年汽车服务有限公司，主营汽车租赁、代驾、二手车、车辆评估、汽车装饰。车型齐全、价格透明，为每一位客户提供安全可靠的出行服务。</p>
+      <div class="hero-btns">
+        <a href="#booking" class="btn btn-a">立即预约</a>
+        <a href="tel:15993179777" class="btn btn-ow">📞 电话咨询</a>
+      </div>
+      <div class="hero-nums">
+        <div class="hero-num"><h3>2018</h3><span>成立年份</span></div>
+        <div class="hero-num"><h3>150+</h3><span>在库车辆</span></div>
+        <div class="hero-num"><h3>3000+</h3><span>服务客户</span></div>
+      </div>
+    </div>
+    <div class="hero-visual"><div class="hero-img"></div></div>
+  </div>
+</section>
+
+<!-- ====== 车型分类报价 ====== -->
+<section class="sec cars-pricing" id="cars">
+  <div class="wrap">
+    <h2 class="sec-t" style="grid-column:1/-1">车型分类报价</h2>
+    <p class="sec-sub" style="grid-column:1/-1">明码标价，长租月租面议</p>
+
+    <!-- 经济型 -->
+    <div class="cat-card">
+      <div class="cat-head">
+        <div class="cat-icon">🚗</div>
+        <div><h3>经济型</h3><small>日常代步首选</small></div>
+        <div class="cat-price"><strong>150-260</strong><span>元/天</span></div>
+      </div>
+      <ul class="cat-cars">
+        <li>大众朗逸 1.5L 自动 <span class="cat-tag tag-hot">热租</span><span>¥150起</span></li>
+        <li>丰田卡罗拉 1.2T <span class="cat-tag tag-new">新到</span><span>¥168起</span></li>
+        <li>日产轩逸 1.6L <span class="cat-tag tag-hot">热租</span><span>¥160起</span></li>
+        <li>现代领动 1.5L<span>¥150起</span></li>
+        <li>大众宝来 1.5L<span>¥155起</span></li>
+      </ul>
+      <div class="cat-foot">
+        <p class="note">月租优惠：<i>面议</i></p>
+        <a href="#booking" class="btn btn-p" style="width:100%">预约车型</a>
+      </div>
+    </div>
+
+    <!-- SUV -->
+    <div class="cat-card">
+      <div class="cat-head">
+        <div class="cat-icon">🚙</div>
+        <div><h3>SUV</h3><small>空间宽敞 通过性好</small></div>
+        <div class="cat-price"><strong>220-380</strong><span>元/天</span></div>
+      </div>
+      <ul class="cat-cars">
+        <li>哈弗H6 1.5T <span class="cat-tag tag-hot">热租</span><span>¥220起</span></li>
+        <li>丰田RAV4 2.0L <span class="cat-tag tag-new">新到</span><span>¥320起</span></li>
+        <li>本田CR-V 1.5T<span>¥300起</span></li>
+        <li>大众途观L 2.0T<span>¥360起</span></li>
+        <li>日产奇骏 2.0L<span>¥280起</span></li>
+      </ul>
+      <div class="cat-foot">
+        <p class="note">月租优惠：<i>面议</i></p>
+        <a href="#booking" class="btn btn-p" style="width:100%">预约车型</a>
+      </div>
+    </div>
+
+    <!-- 商务MPV -->
+    <div class="cat-card">
+      <div class="cat-head">
+        <div class="cat-icon">🚐</div>
+        <div><h3>商务MPV</h3><small>商务接待 多人出行</small></div>
+        <div class="cat-price"><strong>350-600</strong><span>元/天</span></div>
+      </div>
+      <ul class="cat-cars">
+        <li>别克GL8 陆尊 2.0T <span class="cat-tag tag-hot">热租</span><span>¥380起</span></li>
+        <li>本田奥德赛 2.0L混动<span>¥420起</span></li>
+        <li>传祺M8 2.0T<span>¥350起</span></li>
+        <li>丰田塞纳 2.5L混动 <span class="cat-tag tag-new">新到</span><span>¥500起</span></li>
+        <li>奔驰威霆 2.0T <span class="cat-tag tag-vip">高端</span><span>¥600起</span></li>
+      </ul>
+      <div class="cat-foot">
+        <p class="note">月租优惠：<i>面议</i></p>
+        <a href="#booking" class="btn btn-p" style="width:100%">预约车型</a>
+      </div>
+    </div>
+
+    <!-- 高端婚车 -->
+    <div class="cat-card">
+      <div class="cat-head">
+        <div class="cat-icon">💎</div>
+        <div><h3>高端婚车</h3><small>婚庆典礼 尊贵体验</small></div>
+        <div class="cat-price"><strong>500-1200</strong><span>元/天</span></div>
+      </div>
+      <ul class="cat-cars">
+        <li>奔驰E级 E260L <span class="cat-tag tag-vip">婚车</span><span>¥588起</span></li>
+        <li>宝马5系 525Li <span class="cat-tag tag-vip">婚车</span><span>¥558起</span></li>
+        <li>奥迪A6L 45TFSI <span class="cat-tag tag-vip">婚车</span><span>¥500起</span></li>
+        <li>奔驰S级 S400L <span class="cat-tag tag-vip">头车</span><span>¥1200起</span></li>
+        <li>保时捷Panamera <span class="cat-tag tag-vip">头车</span><span>¥1200起</span></li>
+      </ul>
+      <div class="cat-foot">
+        <p class="note">车队套餐：<i>面议</i></p>
+        <a href="#booking" class="btn btn-p" style="width:100%">预约车型</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== 服务介绍 ====== -->
+<section class="sec svcs" id="services">
+  <div class="wrap">
+    <h2 class="sec-t">服务介绍</h2>
+    <p class="sec-sub">五大主营业务，一站式满足您的用车需求</p>
+    <div class="svc-grid">
+      <div class="svc-card">
+        <div class="svc-icon">🚗</div>
+        <h4>汽车租赁</h4>
+        <p>经济型至高端型、自驾至配驾，日租/月租/长租灵活可选，车型齐全、手续简便。</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🧑‍✈️</div>
+        <h4>专业代驾</h4>
+        <p>持证专业司机，熟悉邓州及南阳路况，商务代驾、旅游代驾、酒后代驾安全可靠。</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🔄</div>
+        <h4>二手车交易</h4>
+        <p>收售各品牌二手车，车况透明、价格公道，提供检测评估、过户一站式服务。</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">📋</div>
+        <h4>车辆评估</h4>
+        <p>专业评估师团队，提供二手车价值评估、事故车鉴定、购车前检测等专业服务。</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">✨</div>
+        <h4>汽车装饰</h4>
+        <p>贴膜、脚垫、座套、音响升级、外观改装，让爱车更舒适、更个性。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== 在线预约 ====== -->
+<section class="sec bk" id="booking">
+  <div class="wrap">
+    <h2 class="sec-t" style="grid-column:1/-1">在线预约</h2>
+    <p class="sec-sub" style="grid-column:1/-1">填写信息，客服将在30分钟内与您确认</p>
+    <div class="bk-row" style="margin-top:0">
+      <form class="bk-form" onsubmit="handleBooking(event)">
+        <div class="f-row">
+          <div class="f-grp"><label>姓名 *</label><input type="text" placeholder="您的姓名" required></div>
+          <div class="f-grp"><label>手机号 *</label><input type="tel" placeholder="您的手机号" required></div>
+        </div>
+        <div class="f-row">
+          <div class="f-grp"><label>取车日期 *</label><input type="date" required></div>
+          <div class="f-grp"><label>还车日期 *</label><input type="date" required></div>
+        </div>
+        <div class="f-row">
+          <div class="f-grp">
+            <label>车型类别</label>
+            <select><option value="">请选择</option><option>经济型（150-260元/天）</option><option>SUV（220-380元/天）</option><option>商务MPV（350-600元/天）</option><option>高端婚车（500-1200元/天）</option></select>
+          </div>
+          <div class="f-grp">
+            <label>是否需要司机</label>
+            <select><option value="">请选择</option><option>自驾</option><option>需要配司机</option></select>
+          </div>
+        </div>
+        <div class="f-grp">
+          <label>租车用途</label>
+          <select><option value="">请选择</option><option>日常出行</option><option>商务接待</option><option>婚庆用车</option><option>旅游自驾</option><option>代驾服务</option><option>其他</option></select>
+        </div>
+        <div class="f-grp"><label>备注</label><textarea rows="3" placeholder="特殊需求或其他说明（选填）"></textarea></div>
+        <button type="submit" class="btn btn-a" style="width:100%;font-size:1rem;padding:13px">提交预约</button>
+        <p style="font-size:.78rem;color:var(--g500);text-align:center;margin-top:10px">客服将在30分钟内电话确认，请保持畅通</p>
+      </form>
+
+      <div class="bk-aside">
+        <h3>为什么选择百年租车</h3>
+        <div class="bk-benefit"><div class="bk-bicon">✅</div><div><h4>手续简便</h4><p>身份证+驾驶证即可办理，最快10分钟提车</p></div></div>
+        <div class="bk-benefit"><div class="bk-bicon">💰</div><div><h4>价格透明</h4><p>明码标价无隐形消费，长租月租更优惠</p></div></div>
+        <div class="bk-benefit"><div class="bk-bicon">🛡️</div><div><h4>安全可靠</h4><p>定期保养检测，全险覆盖，24小时道路救援</p></div></div>
+        <div class="bk-benefit"><div class="bk-bicon">🏢</div><div><h4>本地企业</h4><p>2018年扎根邓州，信誉经营，售后有保障</p></div></div>
+        <div class="bk-hotline">
+          <h4>📞 电话预约更快</h4>
+          <div class="tel"><a href="tel:15993179777">15993179777</a></div>
+          <sub>早8:00 - 晚20:00 · 全年无休</sub>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== 门店信息 ====== -->
+<section class="sec store" id="store">
+  <div class="wrap">
+    <h2 class="sec-t" style="grid-column:1/-1">门店地址联系方式</h2>
+    <p class="sec-sub" style="grid-column:1/-1">欢迎到店咨询，实地看车</p>
+    <div class="st-card">
+      <h3>🏢 邓州市百年汽车服务有限公司</h3>
+      <div class="st-item"><div class="st-ico">📍</div><div><h5>公司地址</h5><p>河南省邓州市鸿杰第一城10-208室</p></div></div>
+      <div class="st-item"><div class="st-ico">📞</div><div><h5>联系电话</h5><a href="tel:15993179777">15993179777</a></div></div>
+      <div class="st-item"><div class="st-ico">🕐</div><div><h5>营业时间</h5><p>周一至周日 8:00 - 20:00（全年无休）</p></div></div>
+      <div class="st-item"><div class="st-ico">🏢</div><div><h5>成立时间</h5><p>2018年</p></div></div>
+      <div class="st-item"><div class="st-ico">📋</div><div><h5>经营范围</h5><p>汽车租赁、代驾、二手车、车辆评估、汽车装饰</p></div></div>
+    </div>
+    <div class="st-map">
+      <div class="st-pin">📍</div>
+      <div class="st-addr-label">河南省邓州市<br>鸿杰第一城10-208室</div>
+      <p style="margin-top:14px;color:var(--g500);font-size:.85rem">欢迎到店看车咨询</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====== 租车须知 ====== -->
+<section class="sec guide" id="guide">
+  <div class="wrap">
+    <h2 class="sec-t">租车须知</h2>
+    <p class="sec-sub">了解流程与注意事项，出行更安心</p>
+    <div class="g-grid">
+      <div class="g-card"><div class="g-num">1</div><h4>租车条件</h4><p>年满22周岁，持有效C1及以上驾驶证，提供本人身份证原件。</p></div>
+      <div class="g-card"><div class="g-num">2</div><h4>押金说明</h4><p>取车缴纳押金（经济型2000元、SUV/MPV 3000元、高端5000元），还车无损全额退还，支持微信/支付宝/现金。</p></div>
+      <div class="g-card"><div class="g-num">3</div><h4>里程限制</h4><p>日租不限里程（邓州+南阳地区）。跨省行驶请提前告知以便调整保险。</p></div>
+      <div class="g-card"><div class="g-num">4</div><h4>取还车时间</h4><p>日租按24小时计，超时4小时内收半天，超4小时按全天。请准时还车。</p></div>
+      <div class="g-card"><div class="g-num">5</div><h4>油费规则</h4><p>取车满油、还车满油。未满按市场油价从押金扣除，也可选油费预付。</p></div>
+      <div class="g-card"><div class="g-num">6</div><h4>违章处理</h4><p>租期内违章由租车人承担。还车后有违章记录将通知您处理，可代办。</p></div>
+      <div class="g-card"><div class="g-num">7</div><h4>事故处理</h4><p>发生事故立即报警并联系15993179777，保留证据，勿私了。保险范围内由保险公司赔付。</p></div>
+      <div class="g-card"><div class="g-num">8</div><h4>取消政策</h4><p>24小时前免费取消；24小时内退80%；超时未取自动取消退50%。</p></div>
+    </div>
+    <div class="g-notice">
+      <h4>温馨提示</h4>
+      <p>首次租车请提前30分钟到店办理手续，携带身份证及驾驶证原件。节假日用车请提前3天预约，以免车辆紧张。长租月租价格面议，欢迎来电咨询 <a href="tel:15993179777" style="color:var(--acc);font-weight:700">15993179777</a>。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====== Footer ====== -->
+<footer class="ft">
+  <div class="wrap">
+    <div class="ft-grid">
+      <div class="ft-brand">
+        <h3>邓州市百年汽车服务有限公司</h3>
+        <p>2018年成立，主营汽车租赁、代驾、二手车、车辆评估、汽车装饰。扎根邓州，服务南阳，为您提供一站式专业用车服务。</p>
+      </div>
+      <div class="ft-col">
+        <h4>快速导航</h4>
+        <a href="#home">首页</a><a href="#cars">车型报价</a><a href="#services">服务介绍</a>
+        <a href="#booking">在线预约</a><a href="#store">门店信息</a><a href="#guide">租车须知</a>
+      </div>
+      <div class="ft-col">
+        <h4>联系我们</h4>
+        <p style="font-size:.85rem"><a href="tel:15993179777" style="color:var(--acc);font-weight:600">15993179777</a></p>
+        <p style="font-size:.85rem">鸿杰第一城10-208室</p>
+        <p style="font-size:.85rem;margin-top:6px">8:00 - 20:00 全年无休</p>
+      </div>
+    </div>
+    <div class="ft-bot">&copy; 2026 邓州市百年汽车服务有限公司 版权所有 | 豫ICP备XXXXXXXX号-1</div>
+  </div>
+</footer>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<script>
+function toggleMenu(){
+  document.getElementById('nav').classList.toggle('show');
+  document.getElementById('ham').classList.toggle('on');
+}
+document.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click',()=>{
+  document.getElementById('nav').classList.remove('show');
+  document.getElementById('ham').classList.remove('on');
+}));
+function handleBooking(e){
+  e.preventDefault();
+  var t=document.getElementById('toast');
+  t.textContent='预约提交成功！客服将在30分钟内与您电话确认';
+  t.classList.add('show');
+  setTimeout(function(){t.classList.remove('show')},3500);
+  e.target.reset();
+}
+window.addEventListener('scroll',function(){
+  document.getElementById('hd').style.boxShadow=window.scrollY>8?'0 2px 12px rgba(0,0,0,.08)':'0 1px 4px rgba(0,0,0,.06)';
+});
+</script>
+</body>
+</html>
